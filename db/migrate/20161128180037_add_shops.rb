@@ -1,6 +1,6 @@
 class AddShops < ActiveRecord::Migration[5.0]
   def change
-  	create_table :users do |t|
+  	create_table :shops do |t|
       t.integer :user_id
       t.string  :city
       t.string  :market_name
