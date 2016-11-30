@@ -1,0 +1,24 @@
+RATES
+<table class="table table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Rate ID</th>
+      <th>USER ID</th>
+      <th>Rate</th>
+      <th>修改</th>
+      <th>刪除</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @rates.each do |rate| %>
+    <tr>
+      <td><%= rate.id %></td>
+      <td><%=  rate.user_id %></td>
+         <td><%=  rate.rate%></td>
+      <td><%= link_to '修改', edit_rate_path(rate) %></td>
+      <td><%= link_to '刪除', rate, method: :delete, data: { confirm: '確定要刪除rate?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+ </table>
+<td><%= link_to 'new', new_rate_path %></td>
