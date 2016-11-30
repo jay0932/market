@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  before_action :set_shop, only: [:edit, :update, :show, :destroy
+  before_action :set_shop, only: [:edit, :update, :show, :destroy]
   def index
     @shops = Shop.all
   end
@@ -38,11 +38,11 @@ class ShopsController < ApplicationController
   end
 
 private
-  def shop_params
+  def set_shop
     @shop = Shop.find(params[:id])
   end
 
-  def set_shop
+  def shop_params
     params.require(:shop).permit(:user_id, :city, :market_name, :address, :rent_start_datetime, :rent_end_datetime, :rent_prices, :rent_status, :shop_tool, :shop_note)
   end
 
