@@ -1,0 +1,67 @@
+<div class="well">
+  <%= form_for(shop) do |f|%>
+    <div class="form-group">
+      <%= f.label :user_id %>
+      <br>
+      <%= f.text_field :user_id, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :city %>
+      <br>
+      <%= f.text_field :city, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :market_name %>
+      <br>
+      <%= f.text_field :market_name, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :address %>
+      <br>
+      <%= f.text_field :address, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :rent_start_datetime %>
+      <br>
+      <%= f.text_field :rent_start_datetime, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :rent_end_datetime %>
+      <br>
+      <%= f.text_field :rent_end_datetime, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :rent_prices %>
+      <br>
+      <%= f.text_field :rent_prices, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :rent_status %>
+      <br>
+      <%= f.text_field :rent_status, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :shop_tool %>
+      <br>
+      <%= f.text_field :shop_tool, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :shop_note %>
+      <br>
+      <%= f.text_field :shop_note, html: {class: "form-control"} %>
+    </div>
+
+
+    <br>
+    <%= f.submit(@shop.new_record? ? '新增攤位' : '修改攤位', class:"btn btn-primary") %>
+  <% end %>
+</div>

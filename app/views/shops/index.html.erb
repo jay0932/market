@@ -1,0 +1,20 @@
+shops
+<table class="table table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Shop ID</th>
+      <th>修改</th>
+      <th>刪除</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @shops.each do |shop| %>
+    <tr>
+      <td><%= shop.id %></td>
+      <td><%= link_to '修改', edit_shop_path(shop) %></td>
+      <td><%= link_to '刪除', shop, method: :delete, data: { confirm: '確定要刪除使用者?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+ </table>
+<td><%= link_to 'new', new_shop_path %></td>
