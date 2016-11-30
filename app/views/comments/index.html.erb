@@ -1,0 +1,24 @@
+shops
+<table class="table table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Comment ID</th>
+      <th>Comment USERID</th>
+      <th>Comment Content</th>
+      <th>修改</th>
+      <th>刪除</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @comment.each do |comment| %>
+    <tr>
+      <td><%= comment.id %></td>
+      <td><%= comment.user_id %></td>
+      <td><%= comment.content %></td>
+      <td><%= link_to '修改', edit_comment_path(comment) %></td>
+      <td><%= link_to '刪除', comment, method: :delete, data: { confirm: '確定要刪除評論?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+ </table>
+<td><%= link_to 'new', new_comment_path %></td>
