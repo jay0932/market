@@ -1,0 +1,26 @@
+shops
+<table class="table table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Order ID</th>
+      <th>Order SHOPID</th>
+      <th>Order BUYERID</th>
+      <th>Order Status</th>
+      <th>修改</th>
+      <th>刪除</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.shop_id %></td>
+      <td><%= order.buyer_id %></td>
+      <td><%= order.status %></td>
+      <td><%= link_to '修改', edit_order_path(order) %></td>
+      <td><%= link_to '刪除', order, method: :delete, data: { confirm: '確定要刪除訂單?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+ </table>
+<td><%= link_to 'new', new_order_path %></td>

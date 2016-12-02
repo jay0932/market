@@ -1,0 +1,33 @@
+<div class="well">
+  <%= form_for(order) do |f|%>
+    <div class="form-group">
+      <%= f.label :buyer_id %>
+      <br>
+      <%= f.text_field :buyer_id, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :status %>
+      <br>
+      <%= f.text_field :status, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :order_time %>
+      <br>
+      <%= f.text_field :order_time, html: {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :shop_id %>
+      <br>
+      <%= f.text_field :shop_id, html: {class: "form-control"} %>
+    </div>
+
+
+
+
+    <br>
+    <%= f.submit(@order.new_record? ? '新增訂單' : '修改訂單', class:"btn btn-primary") %>
+  <% end %>
+</div>
